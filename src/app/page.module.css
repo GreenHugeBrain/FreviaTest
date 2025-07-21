@@ -1,0 +1,1032 @@
+.hero {
+    background-color: rgb(241,242,244);
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    align-items: center;
+    font-family: "BPG Ingiri", sans-serif;
+    justify-content: space-between;
+}
+
+.hero img {
+    height: 80%;
+    max-width: 800px;
+    margin-right: 100px;
+    box-shadow: 12px 14px 10px gray;
+}
+
+.hero_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    font-family: "BPG Ingiri", sans-serif;
+    justify-content: center;
+
+}
+
+.hero_text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    font-family: "BPG Ingiri", sans-serif;
+    letter-spacing: 0.7px;
+}
+
+.hero_text h1 {
+    font-size: 80px;
+    font-weight: 100 !important;
+}
+
+.hero_text h1,
+.hero_text h2 {
+    padding: 0;
+    margin: 0;
+}
+
+.hero_text h2 {
+    font-size: 64px;
+    font-weight: 100 !important;
+}
+
+.hero_text p {
+    width: 100%;
+    max-width: 450px;
+    text-align: start;
+    font-size: 18px;
+    margin-top: 20px;
+    color: rgb(76, 75, 75);
+    font-weight: 400 !important;
+}
+
+.input_div{
+    margin-top: 40px;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    height: 60px;
+    border-radius: 5px;
+    font-family: "BPG Ingiri", sans-serif;
+    gap: 6.5px;
+    padding: 2px 10px;
+    padding-left: 20px;
+    border: 1px solid rgb(187, 187, 187);
+    color: rgb(10,101,204);
+    
+}
+
+.input_div i{
+    font-size: 19px;
+}
+
+.input_div input{
+    font-size: 17px;
+    border: none;
+    padding-left: 10px;
+    height: 52px;
+    width: 160px;
+}
+
+.input_div button{
+    height: 80%;
+    background-color: rgb(10,101,204);
+    color: white;
+    padding: 0 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.linee{
+    height: 50%;
+    width: 1px;
+    background-color: rgb(151, 151, 151);
+}
+
+
+
+.popular_jobs{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 10%;
+    font-family: "BPG Ingiri", sans-serif;
+}
+
+.popular_header{
+    display: flex;
+    font-family: "BPG Ingiri", sans-serif;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popular_header h1{
+    font-weight: 400;
+    font-family: "BPG Ingiri", sans-serif;
+    font-size: 35px;
+
+}
+
+.popular_header a{
+    text-decoration: none;
+    color: rgb(10,101,204);
+    border: 1px solid rgb(221, 231, 241);
+    padding: 5px 14px;
+    border-radius: 4px;
+    font-family: "BPG Ingiri", sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 400ms;
+}
+
+.popular_header a:hover{
+    background-color: rgb(11, 103, 208);
+    color: white;
+}
+.popular_header a i{
+    margin-top: 4px;
+}
+
+.popular_cards_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5% 2%;
+    font-family: "BPG Ingiri", sans-serif;
+    gap: 40px;
+    
+    
+}
+
+
+.popular_card{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 47px;
+    width: 22%;
+    font-family: "BPG Ingiri", sans-serif;
+    margin-top: 20px;
+}
+
+.popular_icon{
+    background-color: rgb(222, 234, 248);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+    font-family: "BPG Ingiri", sans-serif;
+    width: 46px;
+    font-size: 20px;
+    color: rgb(10,101,204);
+    border-radius: 7px;
+}
+
+.popular_text{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: "BPG Ingiri", sans-serif;
+}
+
+.popular_text p{
+    font-size: 15px;
+    font-family: "BPG Ingiri", sans-serif;
+}
+
+.popular_text span{
+    font-size: 14px;
+    font-family: "BPG Ingiri", sans-serif;
+    color: gray;
+}    
+
+.pro_web{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(241,242,244);
+    gap: 7%;
+    padding: 2.7%;
+    font-family: "BPG Ingiri", sans-serif;
+    padding-bottom: 110px;
+    
+}
+
+.pro_text{
+    width: 40%;
+    font-family: "BPG Ingiri", sans-serif;
+}
+
+.pro_text h1{
+    font-size: 52px;
+    letter-spacing: 1.6px;
+}
+
+.pro_text h2{
+    margin-top: 47px;
+    font-weight: 500;
+    font-size: 27px;
+    font-family: "BPG Ingiri", sans-serif;
+    letter-spacing: 1.6px;
+}
+
+.pro_list{
+    margin-top: 60px;
+    width: 70%;
+    height: 80%;
+    display: flex;
+    font-family: "BPG Ingiri", sans-serif;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.pro_list_row{
+    background-color: white;
+    padding: 10px;
+    font-size: 24px;
+    font-family: "BPG Ingiri", sans-serif;
+    display: flex;
+    align-items: center;
+    
+    border-radius: 14px;
+    transition: 300ms;
+}
+
+
+.pro_list_row:hover{
+    background-color: rgb(217, 217, 217);
+}
+
+
+
+@media (max-width: 1300px){
+    .hero{
+        padding: 4% 0;
+    }
+
+    .hero img{
+        margin-right: 70px;
+    }
+
+    .hero h1{
+        font-size: 70px;
+    }
+    .hero h2{
+        font-size: 50px;
+    }
+
+    .popular_jobs{
+        padding: 2% 40px;
+    }
+
+    .popular_cards_div{
+        padding: 0;
+    }
+    .popular_card{
+        width: 18%;
+    }
+}
+
+@media (max-width: 1100px){
+    .hero{
+        padding: 10% 0;
+    }
+
+    .hero img{
+        margin-right: 50px;
+        height: 90%;
+    }
+    .hero_text{
+        margin-left: 20px;
+    }
+
+    .hero h1{
+        font-size: 60px;
+    }
+    .hero h2{
+        font-size: 40px;
+    }
+    .hero p{
+        font-size: 17px;
+    }
+
+    .popular_jobs{
+        padding: 5% 40px;
+    }
+
+    .popular_cards_div{
+        padding-top: 20px;
+    }
+    .popular_card{
+        width: 18%;
+    }
+
+    .pro_text h1{
+        font-size: 40px;
+    }
+
+    .pro_text h2{
+        font-size: 21px;
+    }
+}
+
+
+@media (max-width: 940px){
+    .hero{
+        padding: 15% 0;
+        gap: 50px;
+    }
+
+    .hero img{
+        margin-right: 35px;
+        height: 90%;
+    }
+    .hero_text{
+        margin-left: 35px;
+    }
+
+    .hero h1{
+        font-size: 50px;
+    }
+    .hero h2{
+        font-size: 32px;
+    }
+    .hero p{
+        font-size: 15px;
+    }
+
+    .popular_jobs{
+        padding: 5% 40px;
+    }
+
+    .popular_cards_div{
+        padding-top: 20px;
+    }
+    .popular_card{
+        width: 18%;
+    }
+
+    .pro_text h1{
+        font-size: 40px;
+    }
+
+    .pro_text h2{
+        font-size: 21px;
+    }
+}
+
+
+@media (max-width: 880px){
+    .hero{
+        padding: 0 10px;
+        gap: 12px;
+    }
+
+    .hero img{
+        margin-right: 19px;
+        height: 50%;
+    }
+    .hero_text{
+        margin-left: 19px;
+    }
+
+    .input_div{
+        height: 50px;
+        padding-left: 15px;
+        width: 250px;
+        gap: 6.5px;
+    }
+    .input_div input{
+        height: 45px;
+        width: 100px;
+    }
+
+
+    .hero h1{
+        font-size: 40px;
+    }
+    .hero h2{
+        font-size: 27px;
+    }
+    .hero p{
+        font-size: 13px;
+    }
+
+    .popular_jobs{
+        padding: 5% 25px;
+    }
+
+    .popular_header{
+        padding: 0 8%;
+    }
+    
+    .popular_cards_div{
+        padding-top: 20px;
+    }
+    .popular_card{
+        width: 21%;
+    }
+
+    .pro_text h1{
+        font-size: 30px;
+    }
+
+    .pro_text h2{
+        font-size: 17px;
+    }
+
+    .pro_list{
+        gap: 25px;
+    }
+    
+}
+
+
+@media (max-width: 750px){
+    .hero{
+        padding: 0 8px;
+        height: 400px;
+        gap: 10px;
+    }
+
+    .hero img{
+        margin-right: 12px;
+        height: 60%;
+    }
+    .hero_text{
+        margin-left: 12px;
+    }
+
+    .input_div{
+        height: 50px;
+        padding-left: 15px;
+        width: 250px;
+        gap: 6.5px;
+    }
+    .input_div input{
+        height: 45px;
+        width: 100px;
+    }
+
+
+    .hero h1{
+        font-size: 40px;
+    }
+    .hero h2{
+        font-size: 27px;
+    }
+    .hero p{
+        font-size: 13px;
+    }
+
+    .popular_jobs{
+        padding: 5% 25px;
+    }
+
+    .popular_header{
+        padding: 0 8%;
+    }
+    
+    .popular_cards_div{
+        padding-top: 20px;
+    }
+    .popular_card{
+        width: 21%;
+    }
+
+    .pro_text h1{
+        font-size: 30px;
+    }
+
+    .pro_text h2{
+        font-size: 17px;
+    }
+
+    .pro_list{
+        gap: 25px;
+    }
+    
+}
+
+
+
+
+@media (max-width: 650px){
+    .hero{
+        flex-direction: column;
+        padding: 0;
+        height: 550px;
+        gap: 10px;
+        padding-bottom: 130px;
+    }
+
+    .hero img{
+        height: 60%;
+    }
+
+    .input_div{
+        height: 50px;
+        padding-left: 15px;
+        width: 250px;
+        gap: 6.5px;
+    }
+    .input_div input{
+        height: 45px;
+        width: 100px;
+    }
+
+
+    .hero h1{
+        margin-top: 20px;
+        font-size: 35px;
+    }
+    .hero h2{
+        font-size: 24px;
+    }
+    .hero p{
+        font-size: 13px;
+    }
+
+    .popular_jobs{
+        padding: 5% 25px;
+    }
+
+    .popular_header{
+        padding: 0 6%;
+    }
+
+    .popular_header h1{
+        font-size: 26px;
+    }
+    
+    .popular_cards_div{
+        padding-top: 20px;
+    }
+    .popular_card{
+        width: 40%;
+    }
+
+    .pro_web{
+        padding: 7%;
+        flex-direction: column;
+    }
+
+    .pro_text{
+        width: 90%;
+    }
+
+    .pro_text h1{
+        font-size: 30px;
+    }
+
+    .pro_text h2{
+        font-size: 17px;
+    }
+
+    .pro_list{
+        width: 90%;
+        gap: 25px;
+    }
+    
+}
+
+
+.pro_web {
+  padding: 4rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(to right, #f9f9ff, #f0f8ff);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.pro_web::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(173, 216, 230, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: 0;
+}
+
+.pro_text {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.pro_text h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.pro_text h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(to right, #74b9ff, #0984e3);
+  border-radius: 3px;
+}
+
+.pro_text h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #7f8c8d;
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+  line-height: 1.6;
+}
+
+.pro_list {
+  max-height: 520px; /* Limits to roughly 4 items based on card height */
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+  padding-right: 5px; /* Space for scrollbar */
+  
+  /* Custom scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: #74b9ff #f0f8ff;
+}
+
+/* Custom scrollbar for webkit browsers */
+.pro_list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pro_list::-webkit-scrollbar-track {
+  background: #f0f8ff;
+  border-radius: 10px;
+}
+
+.pro_list::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #74b9ff, #0984e3);
+  border-radius: 10px;
+}
+
+.pro_list::-webkit-scrollbar-thumb:hover {
+  background: #0984e3;
+}
+
+.pro_list_row {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.pro_list_row:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(144, 202, 249, 0.3);
+}
+
+.pro_list_row i {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+  color: #3498db;
+  background: #f0f8ff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.pro_list_row:hover i {
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  color: white;
+  transform: scale(1.1);
+}
+
+.pro_list_row div {
+  flex: 1;
+}
+
+.pro_list_row h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.pro_list_row p {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin: 0.2rem 0;
+}
+
+.pro_list_row p:last-child {
+  color: #3498db;
+  font-weight: 500;
+}
+
+/* Empty state styles */
+/* Loading state */
+.loading_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.loading_spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(173, 216, 230, 0.3);
+  border-radius: 50%;
+  border-top-color: #3498db;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading_container p {
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* Empty state */
+.empty_state {
+  background: white;
+  border-radius: 1rem;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty_state i {
+  font-size: 3rem;
+  color: #bdc3c7;
+  margin-bottom: 1rem;
+}
+
+.empty_state p {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+}
+
+.join_btn {
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(9, 132, 227, 0.3);
+}
+
+.join_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(9, 132, 227, 0.4);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .pro_web {
+    padding: 3rem 1.5rem;
+    border-radius: 1rem;
+  }
+  
+  .pro_text h1 {
+    font-size: 2rem;
+  }
+  
+  .pro_text h2 {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .pro_list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animation for new items */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pro_list_row {
+  animation: fadeIn 0.5s ease forwards;
+}
+.name_link {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.name_link:hover {
+  text-decoration: underline;
+}
+
+
+/* Staggered animation delay */
+.pro_list_row:nth-child(1) { animation-delay: 0.1s; }
+.pro_list_row:nth-child(2) { animation-delay: 0.2s; }
+.pro_list_row:nth-child(3) { animation-delay: 0.3s; }
+.pro_list_row:nth-child(4) { animation-delay: 0.4s; }
+.pro_list_row:nth-child(5) { animation-delay: 0.5s; }
+.pro_list_row:nth-child(6) { animation-delay: 0.6s; }
+.pro_list_row:nth-child(7) { animation-delay: 0.7s; }
+.pro_list_row:nth-child(8) { animation-delay: 0.8s; }
+
+/* პროფესიონალების ძებნის სტილები */
+.professional_search {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search_input_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  padding: 12px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.search_input_container:focus-within {
+  border-color: #3498db;
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.2);
+}
+
+.search_input_container i {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin-right: 12px;
+}
+
+.professional_search_input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #2c3e50;
+  background: transparent;
+  font-family: "BPG Ingiri", sans-serif;
+}
+
+.professional_search_input::placeholder {
+  color: #bdc3c7;
+}
+
+.clear_search_btn {
+  background: none;
+  border: none;
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.clear_search_btn:hover {
+  background: #ecf0f1;
+  color: #e74c3c;
+}
+
+.search_results_info {
+  margin-top: 1rem;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #e8f4f8, #d4f4dd);
+  border-radius: 25px;
+  font-size: 0.9rem;
+  color: #2c3e50;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;;
+  max-width: 800px;
+  font-weight: 500;
+}
+
+.no_results {
+  background: white;
+  border-radius: 1rem;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  font-weight: 500;
+  justify-content: center;
+  border: 2px dashed #bdc3c7;
+}
+
+.no_results i {
+  font-size: 3rem;
+  color: #95a5a6;
+  margin-bottom: 1rem;
+}
+
+.no_results p {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.clear_search_btn_large {
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(9, 132, 227, 0.3);
+  font-family: "BPG Ingiri", sans-serif;
+}
+
+.clear_search_btn_large:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(9, 132, 227, 0.4);
+}
+
+/* მობილური ვერსიისთვის */
+@media (max-width: 768px) {
+  .professional_search {
+    margin-top: 1.5rem;
+  }
+  
+  .search_input_container {
+    padding: 10px 15px;
+  }
+  
+  .professional_search_input {
+    font-size: 0.9rem;
+  }
+  
+  .professional_search_input::placeholder {
+    font-size: 0.85rem;
+  }
+  
+  .search_results_info {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .professional_search_input::placeholder {
+    content: "მოძებნეთ პროფესიონალი...";
+  }
+}

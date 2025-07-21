@@ -1,0 +1,792 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/app/components/Header/Header.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************/
+@import url("//cdn.web-fonts.ge/fonts/bpg-ingiri/css/bpg-ingiri.min.css");
+
+.Header_header___60Q_ {
+    width: 100%;
+    height: 80px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    font-family: "BPG Ingiri", sans-serif;
+}
+
+.Header_headerContainer__F6f7F {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 24px;
+}
+
+.Header_nav__0VWUe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+/* Logo styling */
+.Header_logoLink__9HGkN {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.Header_logo__xmjV5 {
+    width: 120px;
+    height: auto;
+    transition: transform 0.25s ease;
+}
+
+.Header_logoLink__9HGkN:hover .Header_logo__xmjV5 {
+    transform: scale(1.05);
+}
+
+/* Navigation container */
+.Header_navContainer__Yguhe {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Navigation list */
+.Header_navList__3Cn2E {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    align-items: center;
+}
+
+.Header_navItem__tkCwE {
+    margin: 0 18px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.Header_navLink__9eqwM {
+    color: #333;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    position: relative;
+    padding: 8px 0;
+    letter-spacing: 0.5px;
+    transition: color 0.25s ease;
+}
+
+.Header_navLink__9eqwM:hover {
+    color: #0a65cc;
+}
+
+.Header_navLink__9eqwM::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0a65cc;
+    transition: width 0.3s ease;
+}
+
+.Header_navLink__9eqwM:hover::after {
+    width: 100%;
+}
+
+/* Auth buttons container */
+.Header_authContainer__xv__t {
+    margin-left: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.Header_authButtons__rCcrL {
+    display: flex;
+    gap: 12px;
+}
+
+.Header_signInButton__yWMD_ {
+    background-color: transparent;
+    color: #0a65cc;
+    border: 2px solid #bfd3f0;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "BPG Ingiri", sans-serif;
+}
+
+.Header_signInButton__yWMD_:hover {
+    background-color: #73aef2;
+    border-color: #73aef2;
+    color: white;
+}
+
+.Header_signUpButton__4IPMU {
+    background-color: #0a65cc;
+    color: white;
+    border: 2px solid #0a65cc;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "BPG Ingiri", sans-serif;
+}
+
+.Header_signUpButton__4IPMU:hover {
+    background-color: #c8dbf1;
+    border-color: #c8dbf1;
+    color: #0a65cc;
+}
+
+/* User profile */
+.Header_userProfile__8QYOd {
+    position: relative;
+    cursor: pointer;
+}
+
+.Header_avatarContainer__lRjzM {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f7fa;
+    border: 2px solid #e1e8f0;
+    transition: border-color 0.2s ease;
+}
+
+.Header_avatarContainer__lRjzM:hover {
+    border-color: #0a65cc;
+}
+
+.Header_avatar__n32jt {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.Header_userProfile__8QYOd:hover .Header_avatar__n32jt {
+    transform: scale(1.1);
+}
+
+/* Dropdown menu */
+.Header_dropdown__89U_3 {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: -10px;
+    width: 240px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 1005;
+}
+
+.Header_dropdownVisible__KYNBK {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.Header_dropdownArrow__qCQY0 {
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    z-index: 1006;
+}
+
+.Header_dropdownItem__RGN7J {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 16px;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+
+.Header_dropdownItem__RGN7J:first-child {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.Header_dropdownItem__RGN7J:hover {
+    background-color: #f5f7fa;
+}
+
+.Header_username__4Q77v {
+    color: #333;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.Header_viewProfile__F0xOJ {
+    color: #777;
+    font-size: 13px;
+}
+
+.Header_logoutText__fkZM2 {
+    color: #ff5252;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Mobile menu button */
+.Header_mobileMenuButton__sdX00 {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1010;
+}
+
+.Header_menuIcon__wd3Jj {
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Media queries */
+@media (max-width: 1024px) {
+    .Header_navItem__tkCwE {
+        margin: 0 14px;
+    }
+    
+    .Header_navLink__9eqwM {
+        font-size: 16px;
+    }
+    
+    .Header_signInButton__yWMD_, .Header_signUpButton__4IPMU {
+        padding: 8px 18px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 900px) {
+    .Header_navItem__tkCwE {
+        margin: 0 10px;
+    }
+    
+    .Header_navLink__9eqwM {
+        font-size: 15px;
+    }
+    
+    .Header_authContainer__xv__t {
+        margin-left: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Header_headerContainer__F6f7F {
+        padding: 0 16px;
+    }
+    
+    .Header_mobileMenuButton__sdX00 {
+        display: flex;
+    }
+    
+    .Header_navContainerOpen__t1Id8 .Header_menuIcon__wd3Jj:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .Header_navContainerOpen__t1Id8 .Header_menuIcon__wd3Jj:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .Header_navContainerOpen__t1Id8 .Header_menuIcon__wd3Jj:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    .Header_navContainer__Yguhe {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 100px 20px 40px;
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .Header_navContainerOpen__t1Id8 {
+        right: 0;
+    }
+    
+    .Header_navList__3Cn2E {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+    
+    .Header_navItem__tkCwE {
+        margin: 0;
+        height: auto;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .Header_navLink__9eqwM {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 17px;
+        padding: 12px 0;
+    }
+    
+    .Header_navLink__9eqwM::after {
+        display: none;
+    }
+    
+    .Header_authContainer__xv__t {
+        margin: 20px 0 0;
+        width: 100%;
+    }
+    
+    .Header_authButtons__rCcrL {
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .Header_signInButton__yWMD_, .Header_signUpButton__4IPMU {
+        width: 100%;
+        padding: 12px;
+    }
+    
+    .Header_dropdown__89U_3 {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 50%;
+        transform: translateX(50%) translateY(-8px);
+    }
+    
+    .Header_dropdownVisible__KYNBK {
+        transform: translateX(50%) translateY(0);
+    }
+    
+    .Header_dropdownArrow__qCQY0 {
+        right: 50%;
+        transform: translateX(50%) rotate(45deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .Header_headerContainer__F6f7F {
+        padding: 0 12px;
+    }
+    
+    .Header_logo__xmjV5 {
+        width: 100px;
+    }
+    
+    .Header_navContainer__Yguhe {
+        width: 100%;
+    }
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/components/Footer/Footer.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+
+.footer {
+    background-color: #4a4063;
+    color: white;
+    padding: 48px;
+    font-family: "BPG Ingiri", sans-serif;
+    letter-spacing: 0.7px;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 32px;
+    gap: 32px;
+  }
+  
+  .brand-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .brand-section p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .footer-links h3 {
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-links a:hover {
+    opacity: 0.8;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 48px;
+    font-size: 14px;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+    
+    .footer {
+      padding: 32px;
+    }
+  }
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/app/pages/Payment/Payment.module.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+.Payment_container__dXIaC {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+
+.Payment_main__3ue8H {
+    flex: 1 1;
+    padding: 2rem 1rem;
+}
+
+.Payment_paymentContainer__tcmZo {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.Payment_title__ghhlB {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.Payment_error__Tk4tl {
+    background-color: #fee;
+    color: #c53030;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #fed7d7;
+    text-align: center;
+}
+
+.Payment_formSection__Q673_ {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+}
+
+.Payment_sectionTitle__dy328 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.Payment_freelancerGrid__JHxrU {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.Payment_freelancerCard__LWQL6 {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Payment_freelancerCard__LWQL6:hover {
+    border-color: #3498db;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+}
+
+.Payment_freelancerCard__LWQL6.Payment_selected__FZ5jB {
+    border-color: #27ae60;
+    background-color: #f0f8f0;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
+}
+
+.Payment_freelancerInfo__qM7wR h3 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.Payment_freelancerInfo__qM7wR p {
+    margin: 0.25rem 0;
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+.Payment_skills__yZvqw {
+    font-style: italic;
+    color: #495057 !important;
+    font-size: 0.9rem !important;
+}
+
+.Payment_checkmark__QrNxz {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #27ae60;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.Payment_inputGroup__Ml4Tj {
+    margin-bottom: 1.5rem;
+}
+
+.Payment_label__4dCq1 {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.Payment_input__Iy5P6,
+.Payment_textarea__xdSLL {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+.Payment_input__Iy5P6:focus,
+.Payment_textarea__xdSLL:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.Payment_textarea__xdSLL {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.Payment_feeBreakdown__bS_iq {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.Payment_feeItem__HW4ZK {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    color: #495057;
+    font-size: 0.95rem;
+}
+
+.Payment_totalFee__80kb2 {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+    border-top: 2px solid #dee2e6;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.Payment_paymentButton__OZ06H {
+    width: 100%;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.Payment_paymentButton__OZ06H:hover:not(:disabled) {
+    background: linear-gradient(135deg, #2980b9, #21618c);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.Payment_paymentButton__OZ06H:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.Payment_paypalSection__zcSjD {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+.Payment_backButton__NaCmL {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.Payment_backBtn__VV9jb {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.Payment_backBtn__VV9jb:hover {
+    background: #5a6268;
+    transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .Payment_paymentContainer__tcmZo {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    .Payment_title__ghhlB {
+        font-size: 2rem;
+    }
+    
+    .Payment_freelancerGrid__JHxrU {
+        grid-template-columns: 1fr;
+    }
+    
+    .Payment_formSection__Q673_ {
+        padding: 1rem;
+    }
+    
+    .Payment_feeBreakdown__bS_iq {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .Payment_main__3ue8H {
+        padding: 1rem 0.5rem;
+    }
+    
+    .Payment_paymentContainer__tcmZo {
+        margin: 0.5rem;
+    }
+    
+    .Payment_title__ghhlB {
+        font-size: 1.5rem;
+    }
+    
+    .Payment_sectionTitle__dy328 {
+        font-size: 1.25rem;
+    }
+    
+    .Payment_freelancerCard__LWQL6 {
+        padding: 1rem;
+    }
+    
+    .Payment_feeItem__HW4ZK,
+    .Payment_totalFee__80kb2 {
+        font-size: 0.9rem;
+    }
+    
+    .Payment_paymentButton__OZ06H {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+}

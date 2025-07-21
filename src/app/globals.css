@@ -1,0 +1,13 @@
+@import url("//cdn.web-fonts.ge/fonts/bpg-ingiri/css/bpg-ingiri.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+  font-family: "BPG Ingiri", system-ui, -apple-system, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F8F8F8;
+    overflow-x: hidden;
+}
