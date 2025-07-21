@@ -34,7 +34,7 @@ const ChatInterface = () => {
     const backgroundColor = colors[colorIndex];
     
     return `data:image/svg+xml,${encodeURIComponent(`
-      <svg width="120" height="120" xmlns="https://www.w3.org/2000/svg">
+      <svg width="120" height="120" xmlns="http://www.w3.org/2000/svg">
         <circle cx="60" cy="60" r="60" fill="${backgroundColor}"/>
         <text x="60" y="75" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="white">${firstLetter}</text>
       </svg>
@@ -57,7 +57,7 @@ const ChatInterface = () => {
     fetchReceiverActivityStatus();
 
     // Initialize socket connection
-    const newSocket = io('https://5.83.153.81:25608');
+    const newSocket = io('http://5.83.153.81:25608');
     setSocket(newSocket);
 
     // Join the chat room
@@ -85,7 +85,7 @@ const ChatInterface = () => {
 
   const fetchReceiverInfo = async () => {
     try {
-      const response = await fetch(`https://5.83.153.81:25608/api/user/${receiver_id}`, {
+      const response = await fetch(`http://5.83.153.81:25608/api/user/${receiver_id}`, {
         headers: {
           'Authorization': `Bearer ${user?.token}`
         }
@@ -100,7 +100,7 @@ const ChatInterface = () => {
 
   const fetchReceiverActivityStatus = async () => {
     try {
-      const response = await fetch(`https://5.83.153.81:25608/api/user-activity/${receiver_id}`, {
+      const response = await fetch(`http://5.83.153.81:25608/api/user-activity/${receiver_id}`, {
         headers: {
           'Authorization': `Bearer ${user?.token}`
         }
@@ -115,7 +115,7 @@ const ChatInterface = () => {
 
   const fetchChatHistory = async () => {
     try {
-      const response = await fetch(`https://5.83.153.81:25608/api/chat-history/${receiver_id}`, {
+      const response = await fetch(`http://5.83.153.81:25608/api/chat-history/${receiver_id}`, {
         headers: {
           'Authorization': `Bearer ${user?.token}`
         }

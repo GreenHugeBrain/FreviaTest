@@ -20,7 +20,7 @@ const Profile = () => {
             setLoading(true);
             const user = JSON.parse(localStorage.getItem('user'));
 
-            const response = await fetch(`https://5.83.153.81:25608/download-resume`, {
+            const response = await fetch(`http://5.83.153.81:25608/download-resume`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ const Profile = () => {
             const formData = new FormData();
             formData.append('resume', selectedFile);
 
-            const response = await fetch(`https://5.83.153.81:25608/upload-resume`, {
+            const response = await fetch(`http://5.83.153.81:25608/upload-resume`, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${user.token}`
@@ -127,7 +127,7 @@ const Profile = () => {
 
         const fetchProfileData = async () => {
             try {
-                const response = await fetch(`https://5.83.153.81:25608/profile/${encodeURIComponent(username)}`, {
+                const response = await fetch(`http://5.83.153.81:25608/profile/${encodeURIComponent(username)}`, {
                     headers: user?.token ? {
                         'Authorization': `Bearer ${user.token}`
                     } : {}
@@ -168,7 +168,7 @@ const Profile = () => {
 
         try {
             const user = JSON.parse(localStorage.getItem('user'));
-            const response = await fetch(`https://5.83.153.81:25608/profile/${username}`, {
+            const response = await fetch(`http://5.83.153.81:25608/profile/${username}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -260,7 +260,7 @@ const Profile = () => {
 
         try {
             const user = JSON.parse(localStorage.getItem('user'));
-            const response = await fetch(`https://5.83.153.81:25608/profile/${username}`, {
+            const response = await fetch(`http://5.83.153.81:25608/profile/${username}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -294,7 +294,7 @@ const Profile = () => {
 
         try {
             const user = JSON.parse(localStorage.getItem('user'));
-            const response = await fetch(`https://5.83.153.81:25608/profile/${username}`, {
+            const response = await fetch(`http://5.83.153.81:25608/profile/${username}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -355,7 +355,7 @@ const Profile = () => {
 
             setLoading(true); // Set loading state for the button
 
-            const response = await fetch(`https://5.83.153.81:25608/profile/${currentUsername}`, {
+            const response = await fetch(`http://5.83.153.81:25608/profile/${currentUsername}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -395,7 +395,7 @@ const Profile = () => {
             setLoading(true);
             const user = JSON.parse(localStorage.getItem('user'));
 
-            const response = await fetch(`https://5.83.153.81:25608/delete-resume`, {
+            const response = await fetch(`http://5.83.153.81:25608/delete-resume`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

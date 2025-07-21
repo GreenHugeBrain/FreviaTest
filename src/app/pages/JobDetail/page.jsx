@@ -25,7 +25,7 @@ const JobDetail = () => {
         const fetchJobData = async () => {
             try {
                 const user = JSON.parse(localStorage.getItem('user'));
-                const response = await fetch(`https://5.83.153.81:25608/jobs/${jobId}`, {
+                const response = await fetch(`http://5.83.153.81:25608/jobs/${jobId}`, {
                     headers: {
                         'Authorization': `Bearer ${user.token}`
                     }
@@ -70,7 +70,7 @@ const JobDetail = () => {
             setDownloadingResume(applicantId);
             const user = JSON.parse(localStorage.getItem('user'));
 
-            const response = await fetch(`https://5.83.153.81:25608/download-resume`, {
+            const response = await fetch(`http://5.83.153.81:25608/download-resume`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
