@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Header from '../../components/Header/Header';
@@ -151,7 +151,8 @@ function JobApplicationForm({ jobId, onClose }) {
   );
 }
 
-export default function Hire() {
+// Create a separate component that uses useSearchParams
+function HireContent() {
     const searchParams = useSearchParams();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [jobs, setJobs] = useState([]);
@@ -361,170 +362,188 @@ export default function Hire() {
     };
 
     return (
-        <>
-            <Header />
-            <main className={styles.container}>
-                {/* Hero Section */}
-                <div className={styles.hero}>
-                    <div className={styles.heroContent}>
-                        <h1>იპოვეთ თქვენი სამუშაო</h1>
-                        <p>ათასობით საინტერესო შესაძლებლობა გელით</p>
-                    </div>
+        <main className={styles.container}>
+            {/* Hero Section */}
+            <div className={styles.hero}>
+                <div className={styles.heroContent}>
+                    <h1>იპოვეთ თქვენი სამუშაო</h1>
+                    <p>ათასობით საინტერესო შესაძლებლობა გელით</p>
                 </div>
+            </div>
 
-                {/* Search and Filter Section */}
-                <div className={styles.searchSection}>
-                    <div className={styles.searchContainer}>
-                        <div className={styles.searchBox}>
-                            <div className={styles.searchInput}>
-                                <svg className={styles.searchIcon} viewBox="0 0 24 24" fill="none">
-                                    <path d="M21 21L16.5 16.5M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                                <input
-                                    type="text"
-                                    placeholder="ძიება (პოზიცია, საკვანძო სიტყვები)"
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                    onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                                />
-                            </div>
-                            <button onClick={handleSearch} className={styles.searchBtn}>
-                                ძებნა
-                            </button>
-                        </div>
-                        <button onClick={handleOpenModal} className={styles.postJobBtn}>
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            {/* Search and Filter Section */}
+            <div className={styles.searchSection}>
+                <div className={styles.searchContainer}>
+                    <div className={styles.searchBox}>
+                        <div className={styles.searchInput}>
+                            <svg className={styles.searchIcon} viewBox="0 0 24 24" fill="none">
+                                <path d="M21 21L16.5 16.5M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>
-                            ვაკანსიის განთავსება
+                            <input
+                                type="text"
+                                placeholder="ძიება (პოზიცია, საკვანძო სიტყვები)"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+                            />
+                        </div>
+                        <button onClick={handleSearch} className={styles.searchBtn}>
+                            ძებნა
                         </button>
                     </div>
+                    <button onClick={handleOpenModal} className={styles.postJobBtn}>
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        ვაკანსიის განთავსება
+                    </button>
                 </div>
+            </div>
 
-                {/* Jobs List */}
-                <div className={styles.jobsContainer}>
-                    <div className={styles.jobsHeader}>
-                        <h2>რეკომენდირებული ვაკანსიები</h2>
-                        <span className={styles.jobsCount}>
-                            {filteredJobs.length} ვაკანსია
-                        </span>
-                    </div>
-                    
-                    <div className={styles.jobsList}>
-                        {loading ? (
-                            <div className={styles.loadingContainer}>
-                                <div className={styles.spinner}></div>
-                                <p>იტვირთება...</p>
-                            </div>
-                        ) : filteredJobs.length === 0 ? (
-                            <div className={styles.emptyState}>
-                                <svg viewBox="0 0 24 24" fill="none">
-                                    <path d="M21 16V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18H19C20.1046 18 21 17.1046 21 16Z" stroke="currentColor" strokeWidth="2"/>
-                                    <path d="M8 12H16M12 8V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                                </svg>
-                                <h3>ვაკანსია ვერ მოიძებნა</h3>
-                                <p>სცადეთ სხვა საძიებო კრიტერიუმები</p>
-                            </div>
-                        ) : (
-                            [...filteredJobs].reverse().map((job) => (
-                                <div key={job.id} className={styles.jobCard}>
-                                    <div className={styles.jobHeader}>
-                                        <div className={styles.jobTitle}>
-                                            <h3>{job.title}</h3>
-                                            {job.author && (
-                                                <div className={styles.companyInfo}>
-                                                    <Link href={`/pages/profile/${job.author.name}`} className={styles.companyLink}>
-                                                        {job.author.name}
-                                                    </Link>
-                                                </div>
-                                            )}
-                                        </div>
-                                        <div className={styles.jobActions}>
-                                            <button 
-                                                className={`${styles.saveBtn} ${savedJobs.has(job.id) ? styles.saved : ''}`}
-                                                onClick={() => handleSaveJob(job.id)}
-                                                title={savedJobs.has(job.id) ? "შენახულიდან წაშლა" : "შენახვა"}
-                                            >
-                                                <svg viewBox="0 0 24 24" fill={savedJobs.has(job.id) ? "currentColor" : "none"}>
-                                                    <path d="M19 21L12 16L5 21V5C5 3.89543 5.89543 3 7 3H17C18.1046 3 19 3.89543 19 5V21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    
-                                    <div className={styles.jobContent}>
-                                        <p className={styles.jobDescription}>{job.description}</p>
-                                        
-                                        <div className={styles.jobDetails}>
-                                            <div className={styles.budgetInfo}>
-                                                <svg viewBox="0 0 24 24" fill="none">
-                                                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                                                    <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                                </svg>
-                                                <span>{formatBudget(job.min_budget, job.max_budget)}</span>
-                                            </div>
-                                        </div>
-                                        
-                                        {job.keywords && (
-                                            <div className={styles.jobTags}>
-                                                {job.keywords.split(',').map((keyword, index) => (
-                                                    <span key={index} className={styles.tag}>
-                                                        {keyword.trim()}
-                                                    </span>
-                                                ))}
+            {/* Jobs List */}
+            <div className={styles.jobsContainer}>
+                <div className={styles.jobsHeader}>
+                    <h2>რეკომენდირებული ვაკანსიები</h2>
+                    <span className={styles.jobsCount}>
+                        {filteredJobs.length} ვაკანსია
+                    </span>
+                </div>
+                
+                <div className={styles.jobsList}>
+                    {loading ? (
+                        <div className={styles.loadingContainer}>
+                            <div className={styles.spinner}></div>
+                            <p>იტვირთება...</p>
+                        </div>
+                    ) : filteredJobs.length === 0 ? (
+                        <div className={styles.emptyState}>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M21 16V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18H19C20.1046 18 21 17.1046 21 16Z" stroke="currentColor" strokeWidth="2"/>
+                                <path d="M8 12H16M12 8V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
+                            <h3>ვაკანსია ვერ მოიძებნა</h3>
+                            <p>სცადეთ სხვა საძიებო კრიტერიუმები</p>
+                        </div>
+                    ) : (
+                        [...filteredJobs].reverse().map((job) => (
+                            <div key={job.id} className={styles.jobCard}>
+                                <div className={styles.jobHeader}>
+                                    <div className={styles.jobTitle}>
+                                        <h3>{job.title}</h3>
+                                        {job.author && (
+                                            <div className={styles.companyInfo}>
+                                                <Link href={`/pages/profile/${job.author.name}`} className={styles.companyLink}>
+                                                    {job.author.name}
+                                                </Link>
                                             </div>
                                         )}
                                     </div>
-                                    
-                                    <div className={styles.jobFooter}>
-                                        <button
-                                            className={`${styles.applyButton} ${activeApplicationId === job.id ? styles.active : ''}`}
-                                            onClick={() => handleApplyClick(job.id)}
+                                    <div className={styles.jobActions}>
+                                        <button 
+                                            className={`${styles.saveBtn} ${savedJobs.has(job.id) ? styles.saved : ''}`}
+                                            onClick={() => handleSaveJob(job.id)}
+                                            title={savedJobs.has(job.id) ? "შენახულიდან წაშლა" : "შენახვა"}
                                         >
-                                            {activeApplicationId === job.id ? 'დახურვა' : 'განცხადების გაგზავნა'}
+                                            <svg viewBox="0 0 24 24" fill={savedJobs.has(job.id) ? "currentColor" : "none"}>
+                                                <path d="M19 21L12 16L5 21V5C5 3.89543 5.89543 3 7 3H17C18.1046 3 19 3.89543 19 5V21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                            </svg>
                                         </button>
                                     </div>
+                                </div>
+                                
+                                <div className={styles.jobContent}>
+                                    <p className={styles.jobDescription}>{job.description}</p>
                                     
-                                    {activeApplicationId === job.id && (
-                                        <JobApplicationForm 
-                                            jobId={job.id}
-                                            onClose={() => setActiveApplicationId(null)}
-                                        />
+                                    <div className={styles.jobDetails}>
+                                        <div className={styles.budgetInfo}>
+                                            <svg viewBox="0 0 24 24" fill="none">
+                                                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                                                <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                            </svg>
+                                            <span>{formatBudget(job.min_budget, job.max_budget)}</span>
+                                        </div>
+                                    </div>
+                                    
+                                    {job.keywords && (
+                                        <div className={styles.jobTags}>
+                                            {job.keywords.split(',').map((keyword, index) => (
+                                                <span key={index} className={styles.tag}>
+                                                    {keyword.trim()}
+                                                </span>
+                                            ))}
+                                        </div>
                                     )}
                                 </div>
-                            ))
-                        )}
-                    </div>
-                </div>
-
-                {/* Fixed SavedJobs Button */}
-                <div className={styles.fixedSavedJobsContainer}>
-                    <button 
-                        className={styles.savedJobsToggle}
-                        onClick={toggleSavedJobs}
-                        title="შენახული ვაკანსიები"
-                    >
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 21L12 16L5 21V5C5 3.89543 5.89543 3 7 3H17C18.1046 3 19 3.89543 19 5V21Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-
-                    </button>
-                    
-                    {/* SavedJobs Component */}
-                    {isSavedJobsOpen && (
-                        <div className={styles.savedJobsPanel}>
-                            <SavedJobs onClose={() => setIsSavedJobsOpen(false)} />
-                        </div>
+                                
+                                <div className={styles.jobFooter}>
+                                    <button
+                                        className={`${styles.applyButton} ${activeApplicationId === job.id ? styles.active : ''}`}
+                                        onClick={() => handleApplyClick(job.id)}
+                                    >
+                                        {activeApplicationId === job.id ? 'დახურვა' : 'განცხადების გაგზავნა'}
+                                    </button>
+                                </div>
+                                
+                                {activeApplicationId === job.id && (
+                                    <JobApplicationForm 
+                                        jobId={job.id}
+                                        onClose={() => setActiveApplicationId(null)}
+                                    />
+                                )}
+                            </div>
+                        ))
                     )}
                 </div>
+            </div>
+
+            {/* Fixed SavedJobs Button */}
+            <div className={styles.fixedSavedJobsContainer}>
+                <button 
+                    className={styles.savedJobsToggle}
+                    onClick={toggleSavedJobs}
+                    title="შენახული ვაკანსიები"
+                >
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 21L12 16L5 21V5C5 3.89543 5.89543 3 7 3H17C18.1046 3 19 3.89543 19 5V21Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                </button>
                 
-            </main>
-            <Footer />
+                {/* SavedJobs Component */}
+                {isSavedJobsOpen && (
+                    <div className={styles.savedJobsPanel}>
+                        <SavedJobs onClose={() => setIsSavedJobsOpen(false)} />
+                    </div>
+                )}
+            </div>
+            
             <Modal 
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
                 onSubmit={handleJobSubmit}
             />
+        </main>
+    );
+}
+
+// Loading fallback component
+function LoadingFallback() {
+    return (
+        <div className={styles.loadingContainer}>
+            <div className={styles.spinner}></div>
+            <p>იტვირთება...</p>
+        </div>
+    );
+}
+
+// Main component with Suspense wrapper
+export default function Hire() {
+    return (
+        <>
+            <Header />
+            <Suspense fallback={<LoadingFallback />}>
+                <HireContent />
+            </Suspense>
+            <Footer />
         </>
     );
 }
