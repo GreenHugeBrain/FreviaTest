@@ -31,7 +31,7 @@ export default function Payment() {
 
     const fetchPayPalClientId = async () => {
         try {
-            const response = await fetch('http://5.83.153.81:25608/api/paypal/client-id');
+            const response = await fetch('https://5.83.153.81:25608/api/paypal/client-id');
             const data = await response.json();
             setClientId(data.client_id);
         } catch (error) {
@@ -41,7 +41,7 @@ export default function Payment() {
 
     const fetchFreelancers = async () => {
         try {
-            const response = await fetch('http://5.83.153.81:25608/api/users', {
+            const response = await fetch('https://5.83.153.81:25608/api/users', {
                 headers: {
                           'Authorization': `Bearer ${JSON.parse(localStorage.getItem('user'))?.token}`
                 }
@@ -63,7 +63,7 @@ export default function Payment() {
         setError('');
 
         try {
-            const response = await fetch('http://5.83.153.81:25608/api/paypal/create-order', {
+            const response = await fetch('https://5.83.153.81:25608/api/paypal/create-order', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ export default function Payment() {
     const handleApprove = async (data) => {
         setLoading(true);
         try {
-            const response = await fetch(`http://5.83.153.81:25608/api/paypal/capture-order/${data.orderID}`, {
+            const response = await fetch(`https://5.83.153.81:25608/api/paypal/capture-order/${data.orderID}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

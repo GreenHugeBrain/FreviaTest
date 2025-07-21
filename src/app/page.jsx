@@ -15,7 +15,7 @@ export default function Home() {
   const [professionalSearchTerm, setProfessionalSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('http://5.83.153.81:25608/professional_network')
+    fetch('https://5.83.153.81:25608/professional_network')
       .then(response => response.json())
       .then(data => {
         setProfessionals(data);

@@ -22,7 +22,7 @@ function JobApplicationForm({ jobId, onClose }) {
         const user = JSON.parse(localStorage.getItem('user'));
         if (!user?.username) return;
 
-        const response = await fetch(`http://5.83.153.81:25608/profile/${user.username}`);
+        const response = await fetch(`https://5.83.153.81:25608/profile/${user.username}`);
         if (response.ok) {
           const profileData = await response.json();
           setUserProfile(profileData);
@@ -54,7 +54,7 @@ function JobApplicationForm({ jobId, onClose }) {
     }
     
     try {
-      const response = await fetch(`http://5.83.153.81:25608/jobs/${jobId}/apply`, {
+      const response = await fetch(`https://5.83.153.81:25608/jobs/${jobId}/apply`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -165,7 +165,7 @@ function HireContent() {
 
     const fetchJobs = async () => {
         try {
-            const response = await fetch('http://5.83.153.81:25608/api/jobs');
+            const response = await fetch('https://5.83.153.81:25608/api/jobs');
             const result = await response.json();
             if (response.ok) {
                 console.log(result)
@@ -191,7 +191,7 @@ function HireContent() {
         // Check each job if it's saved
         for (const job of jobs) {
             try {
-                const response = await fetch(`http://5.83.153.81:25608/check_saved/${job.id}`, {
+                const response = await fetch(`https://5.83.153.81:25608/check_saved/${job.id}`, {
                     headers: {
                         'Authorization': `Bearer ${user.token}`,
                     },
@@ -254,7 +254,7 @@ function HireContent() {
         }
 
         try {
-            const response = await fetch('http://5.83.153.81:25608/jobs/create', {
+            const response = await fetch('https://5.83.153.81:25608/jobs/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -298,7 +298,7 @@ function HireContent() {
             if (isSaved) {
                 // Find saved job ID and remove it
                 // First get saved jobs to find the saved_job_id
-                const savedJobsResponse = await fetch('http://5.83.153.81:25608/saved_jobs', {
+                const savedJobsResponse = await fetch('https://5.83.153.81:25608/saved_jobs', {
                     headers: {
                         'Authorization': `Bearer ${user.token}`,
                     },
@@ -309,7 +309,7 @@ function HireContent() {
                     const savedJob = savedJobsData.saved_jobs.find(sj => sj.job_id === jobId);
                     
                     if (savedJob) {
-                        const response = await fetch(`http://5.83.153.81:25608/saved_job/${savedJob.id}`, {
+                        const response = await fetch(`https://5.83.153.81:25608/saved_job/${savedJob.id}`, {
                             method: 'DELETE',
                             headers: {
                                 'Authorization': `Bearer ${user.token}`,
@@ -331,7 +331,7 @@ function HireContent() {
                 }
             } else {
                 // Save job
-                const response = await fetch(`http://5.83.153.81:25608/save_job/${jobId}`, {
+                const response = await fetch(`https://5.83.153.81:25608/save_job/${jobId}`, {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${user.token}`,
